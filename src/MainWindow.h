@@ -1,6 +1,16 @@
 ﻿#pragma once
 
 
+namespace network
+{
+    class RequestsManager;
+    typedef QSharedPointer<RequestsManager> RequestsManagerShp;
+
+    class Response;
+    typedef QSharedPointer<Response> ResponseShp;
+}
+
+
 namespace Ui
 {
     class MainWindow;
@@ -19,6 +29,8 @@ namespace test_client
 
     private:
         Ui::MainWindow *_ui;
+
+        network::RequestsManagerShp _requestsManager;
 
         const QString WINDOW_TITLE = "AutoReview. Administration tools.";
     };
